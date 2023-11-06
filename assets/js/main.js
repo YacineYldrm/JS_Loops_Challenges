@@ -86,11 +86,11 @@ addWord.addEventListener('click', () =>
     console.log(words);
 });
 
-// =====================================
+// =============================================
 // 
-//    JavaScript ––> loops level II
+//      JavaScript ––> loops level II & III
 // 
-// =====================================
+// =============================================
 
 console.log("%c level_2_1", "color: blue; background-color: gold");
 
