@@ -207,14 +207,3 @@ const every100thChar = () =>
 
 every100thChar();
 
-// const textTeile = [];
-// const trennen = () => {
-//   for (let i = 0; i < text2.length; i += 100) {
-//     const teil = text2.slice(i, i + 100);
-//     const teilNummer = Math.floor(i / 100) + 1;
-//     const teilMitNummer = `${teil} - ${teilNummer} of gesamte-Nachrichten`;
-//     textTeile.push(teilMitNummer);
-//   }
-//   return textTeile;
-// };
-// console.log(trennen(text2));
