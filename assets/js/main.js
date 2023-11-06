@@ -69,9 +69,9 @@ filterWords.addEventListener('click', () =>
     displayWords.innerHTML = "";
     for(let i = 0; i < words.length; i++)
     {
-        if(words[i].length >= lengthInput.value)
+        if(Number(words[i].length) === Number(lengthInput.value))
         {
-            displayWords.innerHTML += ` ${words[i]} <br>`;
+            displayWords.innerHTML += `<p>${words[i]}</p>`;
         };
     };
 });
@@ -84,4 +84,88 @@ addWord.addEventListener('click', () =>
         words.push(inputWord.value);
     }
     console.log(words);
+});
+
+// =====================================
+// 
+//    JavaScript ––> loops level II
+// 
+// =====================================
+
+console.log("%c level_2_1", "color: blue; background-color: gold");
+
+const imageArr = () =>
+{
+    returnArray = [];
+    for(let i = 0; i <= 100; i++)
+    {
+        i = i.toString();
+        returnArray.push(`image_${i.padStart(3, '0')}.img`);
+    }
+    console.log(returnArray);
+}
+imageArr();
+
+console.log("%c level_2_2", "color: blue; background-color: gold");
+
+const inputLength = document.body.querySelector('#inputLength');
+const addLengthBtn = document.body.querySelector('#addLengthBtn');
+const displayText = document.body.querySelector('#displayText');
+displayText.style.color = "green";
+
+addLengthBtn.addEventListener('click', () =>
+{
+    event.preventDefault();
+    displayText.textContent = "L";
+    for(let i = 0; i < inputLength.value; i++)
+    {
+        displayText.textContent += "o";
+    }
+    displayText.textContent += "p";
+});
+
+console.log("%c level_3_2", "color: blue; background-color: gold");
+
+const displayResult = document.body.querySelector('#displayResult'); 
+
+let numArray = [5, 22, 15, 100, 55];
+
+for (let i = 0 ; i < numArray.length; i++)
+{
+    for(let j = 2; j < numArray[i]; j++)
+    {
+        // console.log(numArray[i]);
+        if(numArray[i] % j === 0)
+        {
+            console.log(numArray[i]);
+            const result = Number(numArray[i]) / Number(j);
+            displayResult.innerHTML += `${numArray[i]} is dividable by ${j}. The result is: ${result} <br>`;
+        }
+    }
+};
+
+console.log("%c level_3_3", "color: blue; background-color: gold");
+
+const inputLength2 = document.body.querySelector('#inputLength2');
+const addLengthBtn2 = document.body.querySelector('#addLengthBtn2');
+const displayText2 = document.body.querySelector('#displayText2');
+displayText2.style.color = "green";
+
+addLengthBtn2.addEventListener('click', () =>
+{
+    const inputValue = inputLength2.value;
+    event.preventDefault();
+    displayText2.textContent = "L";
+    for(let i = 0; i < inputValue; i++)
+    {
+        if(i % 2 === 0)
+        {
+            displayText2.textContent += "o";
+        }
+        else
+        {
+            displayText2.textContent += "0";
+        }
+    }
+    displayText2.textContent += "p";
 });
