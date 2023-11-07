@@ -191,18 +191,18 @@ let text2 = `I didn't ask for a completely reasonable excuse! I asked you to get
 let textArray = [];
 let breakPoint = 0;
 let subStartPoint = 0;
-const divTextlength = Math.ceil(text2.length / 100);
+let subLength = 100;
+const divTextlength = Math.ceil(text2.length / subLength);
 
 const every100thChar = () =>
 {
-    for(let i = 100; i <= text2.length || subStartPoint < text2.length; i += 100)
+    for(let i = subLength; subStartPoint < text2.length; i += subLength)
     {
-        textArray.push(`${text2.substring(subStartPoint, i)} - ${breakPoint} of ${divTextlength} `);
         breakPoint++
+        textArray.push(`${text2.substring(subStartPoint, i)} - ${breakPoint} of ${divTextlength} `);
         subStartPoint = i;
     }
     console.log(textArray);
 };
-
 every100thChar();
 
